@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.d("czh","MyView TouchListener's onTouch excute");
+                Log.d("czh", "MyView TouchListener's onTouch excute " + MotionEventHelper.toName(event));
                 return false;
             }
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         viewg.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.d("czh","MyViewGroup TouchListener's onTouch excute");
+                Log.d("czh", "MyViewGroup TouchListener's onTouch excute " + MotionEventHelper.toName(event));
                 return false;
             }
         });
@@ -42,16 +42,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("czh","MainActivity dispatchTouchEvent excute");
+        Log.d("czh", "MainActivity dispatchTouchEvent excute " + MotionEventHelper.toName(ev));
         boolean flag = super.dispatchTouchEvent(ev);
-        Log.d("czh","MainActivity dispatchTouchEvent return " + flag);
+        Log.d("czh", "MainActivity dispatchTouchEvent return " + flag);
         return flag;
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("czh","MainActivity onTouchEvent excute");
+        Log.d("czh", "MainActivity onTouchEvent excute " + MotionEventHelper.toName(event));
         boolean flag = super.onTouchEvent(event);
-        Log.d("czh","MainActivity onTouchEvent return " + flag);
+        Log.d("czh", "MainActivity onTouchEvent return " + flag);
         return flag;
     }
 

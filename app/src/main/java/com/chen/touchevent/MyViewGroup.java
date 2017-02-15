@@ -10,11 +10,12 @@ import android.view.ViewGroup;
 /**
  * Created by chenzhaohua on 15/12/16.
  */
-public class MyViewGroup extends ViewGroup{
+public class MyViewGroup extends ViewGroup {
 
     public MyViewGroup(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
     /**
      * 计算控件的大小
      */
@@ -88,36 +89,34 @@ public class MyViewGroup extends ViewGroup{
             // 获取在onMeasure中计算的视图尺寸
             int measureHeight = childView.getMeasuredHeight();
             int measuredWidth = childView.getMeasuredWidth();
-            childView.layout(l, mTotalHeight, measuredWidth, mTotalHeight+ measureHeight);
+            childView.layout(l, mTotalHeight, measuredWidth, mTotalHeight + measureHeight);
             mTotalHeight += measureHeight;
         }
 
     }
 
 
-
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("czh","MyViewGroup onTouchEvent excute");
+        Log.d("czh", "MyViewGroup onTouchEvent excute " + MotionEventHelper.toName(event));
         boolean flag = super.onTouchEvent(event);
-        Log.d("czh","MyViewGroup onTouchEvent , return " + flag);
+        Log.d("czh", "MyViewGroup onTouchEvent , return " + flag);
         return flag;
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("czh","MyViewGroup dispatchTouchEvent excute");
+        Log.d("czh", "MyViewGroup dispatchTouchEvent excute " + MotionEventHelper.toName(ev));
         boolean flag = super.dispatchTouchEvent(ev);
-        Log.d("czh","MyViewGroup dispatchTouchEvent , return " + flag);
+        Log.d("czh", "MyViewGroup dispatchTouchEvent , return " + flag);
         return flag;
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("czh","MyViewGroup onInterceptTouchEvent excute");
+        Log.d("czh", "MyViewGroup onInterceptTouchEvent excute " + MotionEventHelper.toName(ev));
         boolean flag = super.onInterceptTouchEvent(ev);
-        Log.d("czh","MyViewGroup onInterceptTouchEvent , return " + flag);
+        Log.d("czh", "MyViewGroup onInterceptTouchEvent , return " + flag);
         return flag;
     }
 
